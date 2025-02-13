@@ -80,12 +80,3 @@ function handleNoClick() {
 function handleYesClick() {
     window.location.href = "yes_page.html";
 }
-
-
-window.addEventListener('load', function() {
-    // Para navegadores modernos
-    const navEntries = performance.getEntriesByType("navigation");
-        if (navEntries.length && navEntries[0].type === "reload") {
-          window.location.href = "index.html";
-        }
-    });
