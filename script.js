@@ -81,6 +81,11 @@ function handleYesClick() {
     window.location.href = "yes_page.html";
 }
 
-function handleWhatsClick() {
-    window.location.href = "https://wa.me/+593987435775";
-} //agregar un target blank para que se abra en otra pestaña
+
+window.addEventListener('load', function() {
+    // Para navegadores modernos
+    const navEntries = performance.getEntriesByType("navigation");
+        if (navEntries.length && navEntries[0].type === "reload") {
+          window.location.href = "index.html";
+        }
+    });
